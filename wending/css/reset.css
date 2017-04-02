@@ -1,0 +1,68 @@
+@charset "utf-8";
+/*初始化*/
+body {
+    font-family:"微软雅黑";
+    font-size: 14px;
+    height: 2000px;
+    background-color: #212121;
+}
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;  /*清除元素的内外边距*/
+}
+
+textarea {
+    resize: none;  /*不可以随意拖动*/
+}
+/*防止拖动*/
+img {
+    border: 0;
+    vertical-align: middle; /*  去掉图片底部默认的3像素空白缝隙*/
+    margin: 0px;
+    padding: 0px;
+}
+a, a:hover {
+    text-decoration: none;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+s, i, em {  /*一般是起装饰作用*/
+    font-style: normal;  /*去掉原有的样式*/
+    text-decoration: none;  /*去掉下划线或是删除线*/
+}
+
+.clearfix:before, .clearfix:after {
+    /*清除浮动，最好最标准的写法*/
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1; /*IE/7/6*/  /*兼容IE6下的写法*/
+}
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.banxin {
+    width: 1210px;
+    margin: 0 auto;
+}
+
+/*这个是move的公共样式*/
+.move{
+    transition: all .3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-delay: 0s;
+}
