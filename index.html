@@ -1,861 +1,200 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="css/header.css"/>
-    <link rel="stylesheet" href="css/reset.css"/>
-    <link rel="stylesheet" href="css/slider.css"/>
-    <link rel="stylesheet" href="css/kehu.css"/>
-    <link rel="stylesheet" href="css/pinpai.css"/>
-    <link rel="stylesheet" href="css/weidianying.css"/>
-    <link rel="stylesheet" href="css/tel_and_address.css"/>
-    <link rel="stylesheet" href="css/news.css"/>
-    <link rel="stylesheet" href="css/footer.css"/>
-    <script src="js/jquery-1.12.2.js"></script>
-    <script src="js/jquery.color.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/slider.js"></script>
-    <script src="js/weidianying.js"></script>
-    <script>
-        //滚动鼠标的时候，将头部的导航栏固定在页面最顶端
-        $(function(){
-            //先求出头部导航高度
-            var headerHeight = 0;
-            //注册事件
-            $(window).scroll(function(){
-                var scrollTop =$(window).scrollTop();//页面卷去的高度
-                if(scrollTop > 0){
-                    //卷去的高度大于0的时候
-                    $(".header").css({
-                        "position":"fixed",
-                        "top":0
-                    });
-                    $(".row").css({
-                        "paddingTop":$(".nav").height(),
-                    })
-                }else{
-                    $(".header").css({
-                        "position":"static",
-                        //取消固定定位
-                    })
-                    $(".row").css({
-                        "padding-top":0
-                    })
-                }
-            })
-        })
-    </script>
-    <script>
-        $(function(){
-            $(".dayi").mouseenter(function(){
-                $(this).children(".wrap-midle-chang").css("background-color","#FF0000");
-                $(this).children(".wrap-midle-chang").children(".yuan").css({backgroundPosition: "0 -36px"});
-                $(this).children(".wrap-midle-chang").children(".yuan1").css({backgroundPosition: "-37px -36px"});
-            });
-            $(".dayi").mouseleave(function() {
-                $(this).children(".wrap-midle-chang").css("background-color", "#414141");
-                $(this).children(".wrap-midle-chang").children(".yuan").css({backgroundPosition: "0 0px"});
-                $(this).children(".wrap-midle-chang").children(".yuan1").css({backgroundPosition: "-36px 0"});
-            })
-        })
-    </script><!--品牌中心-->
-    <script>
-        $(function(){
-            $(".btn").hover(function(){
-                $(this).find('.bg').stop().animate({'top':-18});
-            },function(){
-                $(this).find('.bg').stop().animate({'top':0});
-            })
-        })
-    </script><!--新闻中心-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="" href="css/index.css">
+    <title>Document</title>
 </head>
+
 <body>
-<!--头部导航 B-->
-<div id="header" class="header">
-    <div class="container">
-        <!--左边logo-->
-        <a href="ttp://www.bj520.com/"><img src="images/logo.png" alt=""/></a>
-        <!--右边导航-->
-        <ul class="pull-right nav" id="nav" >
-            <li class="head_nav_li"><a href="http://www.bj520.com/" target="_blank">首页</a>
-            </li>
-            <li class="head_nav_li">
-                <a href="#" target="_blank">简介</a>
-                <ul class="subnav subnav_j">
-                    <li><a href="#" target="_blank">简介</a></li>
-                    <li><a href="#" target="_blank">礼服</a></li>
-                    <li><a href="#" target="_blank">摄影团队</a></li>
-                </ul>
-            </li>
-            <li class="head_nav_li"><a href="#" target="_blank">客照</a>
-            </li>
-            <li class="head_nav_li"><a href="#" target="_blank">评价</a>
-            </li>
-            <li class="head_nav_li"><a href="#" target="_blank">优惠</a>
-            </li>
-            <li class="head_nav_li"><a href="#" target="_blank">微电影</a>
-            </li>
-            <li class="head_nav_li">
-                <a href="#" target="_blank">旅拍店家</a>
-                <ul class="subnav">
-                    <li><a href="#" target="_blank">厦门</a></li>
-                    <li><a href="#" target="_blank">三亚</a></li>
-                    <li><a href="#" target="_blank">丽江</a></li>
-                    <li><a href="#" target="_blank">大理</a></li>
-                    <li><a href="#" target="_blank">青岛</a></li>
-                    <li><a href="#" target="_blank">大连</a></li>
-                    <li><a href="#" target="_blank">桂林</a></li>
-                    <li><a href="#" target="_blank">深圳</a></li>
-                    <li><a href="#" target="_blank">香港</a></li>
-                    <li><a href="#" target="_blank">香格里拉</a></li>
-                    <li><a href="#" target="_blank">巴厘岛</a></li>
-                    <li><a href="#" target="_blank">普吉岛</a></li>
-                    <li><a href="#" target="_blank">马尔代夫</a></li>
-                </ul>
-            </li>
-            <li class="head_nav_li"><a href="#" target="_blank">写真旅拍</a>
-            </li>
-            <li class="head_nav_li"><a href="#" target="_blank">亲子旅拍</a>
-            </li>
-        </ul>
-    </div>
-</div>
-<!--头部导航 E-->
-
-<!--  导航下大轮播图   B-->
-<div class="row" id="row">
-    <div class="slider fl"><!-- slifer-->
-        <!-- slider-ul-->
-        <ul class="slider-ul" id="imgs">
-            <li class="img-show"><a href="#"><img src="images/fen.jpg" width="1920" ></a></li>
-            <li><a href="#"><img src="images/lan.jpg" alt=""></a></li>
-            <li><a href="#"><img src="images/hong.jpg" alt=""></a></li>
-            <li><a href="#"><img src="images/xinchun.jpg" alt=""></a></li>
-        </ul>
-        <div class="banxin">
-            <div class="arrow" id="arr">
-                <span class="arrow-l" id="prev"><</span>
-                <span class="arrow-r" id="next">></span>
-            </div>
-            <div class="circle">
-                <ul>
-                    <li class="current"></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
+    <!--头部-->
+    <div class="container header">
+        <!--<div class="city">广州市</div>
+        <div class="today_temperature">23℃</div>
+        <div class="clearfix">
+            <div class="wind pull-left">2级北风</div>
+            <div class="humidity pull-right">湿度：4%</div>
         </div>
-    </div>
-</div>
-<!--<div class="yinying">-->
-<!--<span class="yinying-left"></span>-->
-<!--<span class="yinying-right"></span>-->
-<!--</div>-->
-<div class="r-yz">
-    <img src="images/yz.jpg" alt="">
-</div>
-<!--  导航下大轮播图   E-->
-
-<!--最新客照  B-->
-<div class="big" id="zuixinkezhao">
-    <div class="title">
-        <h2>最新客照</h2>
-        <h5>CUSTOMER WEDDING PHOTOS</h5>
-        <div></div>
-        <span></span>
-    </div>
-    <div class="box" id="box1">
-        <span class="left botton" id="left1"></span>
-        <div class="banxin">
-            <div class="lunbotu" id="l1">
-                <ul>
-                    <li>
-                        <a href="javascript:0"><img src="images/zuixinkezhao13.jpg" alt=""/></a>
-                    </li>
-                    <li>
-                        <a href="javascript:0"><img src="images/zuixinkezhao13.jpg" alt=""/></a>
-                    </li>
-                    <li>
-                        <a href="javascript:0"><img src="images/zuixinkezhao13.jpg" alt=""/></a>
-                    </li>
-                    <li>
-                        <a href="javascript:0"><img src="images/zuixinkezhao1.jpg" alt=""/></a>
-                    <span class="info">
-                        <a href="javascript:0">
-                            马尔代夫客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao2.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            普吉岛客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao3.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            巴厘岛客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao4.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            香格里拉客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao5.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            香港客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao6.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            深圳客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao7.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            桂林客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao8.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            大连客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao9.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            青岛客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao10.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            大理客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao11.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            丽江客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao12.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            三亚客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao13.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            厦门客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li>
-                        <a href="javascript:0"><img src="images/meizhoukezhao4.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            厦门客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li>
-                        <a href="javascript:0"><img src="images/meizhoukezhao7.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            厦门客照 <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao1.jpg" alt=""/></a></li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao2.jpg" alt=""/></a></li>
-                    <li><a href="javascript:0"><img src="images/zuixinkezhao3.jpg" alt=""/></a></li>
-                </ul>
-            </div>
+        <div class="life clearfix">
+            <div class="uv_index">紫外线强度：中等</div>
+            <div class="wash_index">洗车指数：较适宜</div>
+            <div class="travel_index">旅游指数：较适宜</div>
+            <div class="exercise_index">晨练指数：较适宜</div>
         </div>
-
-        <span class="right botton" id="right1"></span>
+        <div class="dressing_index">穿衣指数：舒适</div>
+        <div class="advice">建议着长袖T恤、衬衫加单裤等服装。年老体弱者宜着针织长袖衬衫、马甲和长裤。</div>-->
     </div>
-</div>
-<!--最新客照  E-->
-
-<!--每周客照  B-->
-<div id="meizhoukezhao" class="big">
-    <div class="title">
-        <h2>每周客照</h2>
-        <h5>CUSTOMER WEDDING PHOTOS</h5>
-        <div></div>
-        <span></span>
-    </div>
-    <div class="box" id="box2">
-        <span class="left botton" id="left2"></span>
-        <div class="banxin">
-            <div class="lunbotu" id="l2">
-                <ul>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao7.jpg" alt=""/></a></li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao8.jpg" alt=""/></a></li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao9.jpg" alt=""/></a></li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao1.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            01月客照（二） <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao2.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            01月客照（一） <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao3.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            12月客照（四） <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao4.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            12月客照（三） <span>→</span>
-                        </a>
-                    </span></li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao5.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            12月客照（二） <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao6.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            12月客照（一） <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao7.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            11月客照（四） <span>→</span>
-                        </a>
-                    </span></li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao8.jpg" alt=""/></a>
-                <span class="info">
-                        <a href="javascript:0">
-                            11月客照（三） <span>→</span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao9.jpg" alt=""/></a>
-
-                <span class="info">
-                        <a href="javascript:0">
-                            11月客照（二） <span>→</span>
-                        </a>
-                    </span></li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao1.jpg" alt=""/></a></li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao2.jpg" alt=""/></a></li>
-                    <li><a href="javascript:0"><img src="images/meizhoukezhao3.jpg" alt=""/></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <span class="right botton" id="right2"></span>
-    </div>
-</div>
-<!--每周客照  E-->
-
-<!--客户微电影  B-->
-<div id="kehuweidianying" class="big">
-    <div class="title">
-        <h2>客户微电影</h2>
-        <h5>CUSTOMER WEDDING PHOTOS</h5>
-        <div></div>
-        <span></span>
-    </div>
-    <div class="box" id="box3">
-        <span class="left botton" id="left3"></span>
-        <div class="banxin">
-            <div class="lunbotu" id="l3">
-                <ul>
-                    <li><a href="javascript:0"><img src="images/kehuweidianying4.jpg" alt=""/></a>
-                <span class="movie">
-                        <a href="javascript:0">
-                            12月微电影（上） <span></span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/kehuweidianying5.jpg" alt=""/></a>
-                <span class="movie">
-                        <a href="javascript:0">
-                            12月微电影（下） <span></span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/kehuweidianying6.jpg" alt=""/></a>
-                <span class="movie">
-                        <a href="javascript:0">
-                            11月微电影（上） <span></span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/kehuweidianying1.jpg" alt=""/></a>
-                <span class="movie">
-                        <a href="javascript:0">
-                            11月微电影（下） <span></span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/kehuweidianying2.jpg" alt=""/></a>
-                <span class="movie">
-                        <a href="javascript:0">
-                            10月微电影（上） <span></span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/kehuweidianying3.jpg" alt=""/></a>
-                <span class="movie">
-                        <a href="javascript:0">
-                            10月微电影（下） <span></span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/kehuweidianying4.jpg" alt=""/></a>
-                <span class="movie">
-                        <a href="javascript:0">
-                            12月微电影（上） <span></span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/kehuweidianying5.jpg" alt=""/></a>
-                <span class="movie">
-                        <a href="javascript:0">
-                            12月微电影（下） <span></span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/kehuweidianying6.jpg" alt=""/></a>
-                <span class="movie">
-                        <a href="javascript:0">
-                            11月微电影（上） <span></span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/kehuweidianying1.jpg" alt=""/></a>
-                <span class="movie">
-                        <a href="javascript:0">
-                            11月微电影（下） <span></span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/kehuweidianying2.jpg" alt=""/></a>
-                 <span class="movie">
-                        <a href="javascript:0">
-                            10月微电影（上） <span></span>
-                        </a>
-                    </span>
-                    </li>
-                    <li><a href="javascript:0"><img src="images/kehuweidianying3.jpg" alt=""/></a>
-                <span class="movie">
-                        <a href="javascript:0">
-                            10月微电影（下） <span></span>
-                        </a>
-                    </span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <span class="right botton" id="right3"></span>
-    </div>
-</div>
-<!--客户微电影  E-->
-
-<!--tel全国免费咨询热线 B -->
-<!--tel-->
-<div class="tel">
-    <div class="address">
-        <img src="images/400tel.gif" alt=""/>
-    </div>
-</div>
-<!--tel全国免费咨询热线 B -->
-
-<!--city全国旅拍基地客照 B-->
-<div class="city">
-    <div class="city-content">
-        <div class="title">
-            <h2>全球旅拍基地客照</h2><p>CUSTOMER WEDDING PHOTOS</p>
-            <center>
-                <hr>
-            </center>
-        </div>
-        <div class="city_name">
-            <ul>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg1 move"></a></li>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg2 move"></a></li>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg3 move"></a></li>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg4 move"></a></li>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg5 move"></a></li>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg6 move"></a></li>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg7 move"></a></li>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg8 move"></a></li>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg9 move"></a></li>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg10 move"></a></li>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg11 move"></a></li>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg12 move"></a></li>
-                <li><a href="http://www.bj520.com/photo-list-xm.html" class="city_name_bg13 move"></a></li>
+    <!--内容-->
+    <div class="container" id="main">
+        <div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs tabs-ul" role="tablist">
+                <!--<li role="presentation" class="active">
+                    <a href="#today" aria-controls="home" role="tab" data-toggle="tab">
+                        <div>今天</div>
+                        <div>周一</div>
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#day2" aria-controls="messages" role="tab" data-toggle="tab">
+                        <div>12-25</div>
+                        <div>周二</div>
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#day3" aria-controls="settings" role="tab" data-toggle="tab">
+                        <div>12-25</div>
+                        <div>周三</div>
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#day4" aria-controls="settings" role="tab" data-toggle="tab">
+                        <div>12-25</div>
+                        <div>周二</div>
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#day5" aria-controls="settings" role="tab" data-toggle="tab">
+                        <div>12-25</div>
+                        <div>周二</div>
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#day6" aria-controls="settings" role="tab" data-toggle="tab">
+                        <div>12-25</div>
+                        <div>周二</div>
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#day7" aria-controls="settings" role="tab" data-toggle="tab">
+                        <div>12-25</div>
+                        <div>周二</div>
+                    </a>
+                </li>-->
             </ul>
-        </div>
-    </div>
-</div>
-<!--city全国旅拍基地客照 E-->
 
-<!--品牌中心的开始-->
-<div class="pinpai banxin">
-    <div class="biaoti">
-        <h2>品牌中心</h2>
-        <p>BOJUEPHOTOBRANDCENTER</p>
-        <hr/>
-    </div>
-    <div class="wrap">
-        <ul>
-            <li>
-                <div class="dayi">
-                    <a href="#"><img src="images/one.bmp" alt=""></a>
-                    <div class=wrap-midle-chang>
-                        <p>品牌简介</p>
-                        <i class="yuan"></i>
-                    </div>
+            <!-- Tab panes -->
+            <div class="tab-content tabs-bottom">
+                <!--<div role="tabpanel" class="tab-pane active" id="today">
+                    <div class="temperature">22℃~25℃</div>
+                    <div class="weather">多云</div>
                 </div>
-            </li>
-            <li>
-                <div class="dayi">
-                    <a href="#"><img src="images/two.bmp" alt=""></a>
-                    <div class=wrap-midle-chang>
-                        <p>伯爵18大高端定制</p>
-                        <i class="yuan1"></i>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="dayi">
-                    <a href="#"><img src="images/three.bmp" alt=""></a>
-                    <div class=wrap-midle-chang>
-                        <p>伯爵摄影团队</p>
-                        <i class="yuan"></i>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="dayi">
-                    <a href="#"><img src="images/four.bmp" alt=""></a>
-                    <div class=wrap-midle-chang>
-                        <p>店家简介</p>
-                        <i class="yuan"></i>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="dayi">
-                    <a href="#"><img src="images/five.bmp" alt=""></a>
-                    <div class=wrap-midle-chang>
-                        <p>"伯爵风"是什么</p>
-                        <i class="yuan1"></i>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="dayi">
-                    <a href="#"><img src="images/six.bmp" alt=""></a>
-                    <div class=wrap-midle-chang>
-                        <p>伯爵后期中心</p>
-                        <i class="yuan"></i>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
-<!--品牌中心的结束-->
-
-<!--客户评价 B-->
-<div class="kenew">
-    <div class="banxin w">
-        <div class="kenew_kehu">
-            <!-- 标题部分-->
-            <div class="kenew_kehu_top">
-                <h2>客户评价</h2>
-                <p>CUSTOMER EVALUATION</p>
-                <div class="kenew_kehu_top_one"></div>
-                <div class="kenew_kehu_top_two">
-                    <div class="btn fr">
-                        <div class='bg'>
-                            <span class='one'></span>
-                            <span class='two'></span>
-                        </div>
-                      </div>
-                </div>
-            </div>
-            <!-- 客户评论部分-->
-            <div class="kenew_kehu_bottom">
-                <!-- left-->
-                <div class="buttom_left fl">
-                    <div class="buttom_left_top move">
-                        <br>
-                        <span>卢先生 许小姐</span>
-                        <br>
-                        <i>铂爵厦门客户卢先生和许小姐收到婚纱照后第一时间对铂爵婚纱摄影的真实好评,详细描述在厦门拍摄婚纱照过程中和厦门铂爵摄影团队...</i>
-                    </div>
-                    <div class="buttom_left_buttom move">
-                        <!--<br>-->
-                        <span>02-05</span>
-                        <!--<br>-->
-                        <i>客户真实评价</i>
-                        <b class="b_left"></b>
-                    </div>
-                </div>
-                <!-- zhong-->
-                <div class="buttom_zhong fl">
-                    <div class="buttom_zhong_top move">
-                        <br>
-                        <span>王先生 霍小姐</span>
-                        <br>
-                        <i>铂爵三亚客户王先生和霍小姐收到婚纱照后第一时间对铂爵婚纱摄影的真实好评,详细描述在厦门拍摄婚纱照过程中和三亚铂爵摄影团队...</i>
-                    </div>
-                    <div class="buttom_zhong_buttom move">
-                        <!--<br>-->
-                        <span>02-06</span>
-                        <!--<br>-->
-                        <i>客户真实评价</i>
-                        <b class="b_zhong"></b>
-                    </div>
-                </div>
-                <!-- right-->
-                <div class="buttom_right fl">
-                    <div class="buttom_right_top move">
-                        <br>
-                        <span>郑先生 林小姐</span>
-                        <br>
-                        <i>铂爵北京客户卢先生和许小姐收到婚纱照后第一时间对铂爵婚纱摄影的真实好评,详细描述在厦门拍摄婚纱照过程中和北京铂爵摄影团队...</i>
-                    </div>
-                    <div class="buttom_right_buttom move">
-                        <!--<br>-->
-                        <span>02-07</span>
-                        <!--<br>-->
-                        <i>客户真实评价</i>
-                        <b class="b_right"></b>
-                    </div>
-                </div>
-
+                <div role="tabpanel" class="tab-pane" id="day2">第2页</div>
+                <div role="tabpanel" class="tab-pane" id="day3">第3页</div>
+                <div role="tabpanel" class="tab-pane" id="day4">第4页</div>
+                <div role="tabpanel" class="tab-pane" id="day5">第5页</div>
+                <div role="tabpanel" class="tab-pane" id="day6">第6页</div>
+                <div role="tabpanel" class="tab-pane" id="day7">第7页</div>-->
             </div>
         </div>
-        <div class="kenew_new"></div>
     </div>
-</div>
-<!--客户评价 E-->
-
-<!-- 新闻中心  B -->
-<div class="news">
-    <div class="news-biaoti banxin">
-        <!-- 新闻中心 标题-->
-        <div class="news-title">
-            <h2>新闻中心</h2>
-            <p>NEWS CENTER</p>
-            <center>
-                <hr class="hr-red">
-            </center>
-            <!--<div class="jiantou fr">-->
-            <!--<a href="#" class="news-btn " >-->
-            <!--<span class='one'></span>-->
-            <!--<span class='two'></span>-->
-            <!--</a>-->
-            <!--</div>-->
-        </div>
-        <div class="btn fr">
-            <div class='bg'>
-                <span class='one'></span>
-                <span class='two'></span>
-            </div>
-        </div>
-        <!-- 新闻中心 的内容-->
-        <div class="n-content clearfix">
-            <!-- 新闻左边 ul 的内容-->
-            <div class="n-c-left fl ">
-                <ul>
-                    <li class="content-Left ">
-                        <a href="#">
-                            <p>02-03<span>青岛是一座历史文化名城，在青岛拍婚纱照哪家好？</span></p>
-                            <hr class="hr-gray">
-                        </a>
-                    </li>
-                    <li class="content-Left">
-                        <a href="#">
-                            <p>01-20<span>青岛是一座历史文化名城，在青岛拍婚纱照哪家好？</span></p>
-                            <hr class="hr-gray">
-                        </a>
-                    </li>
-                    <li class="content-Left">
-                        <a href="#">
-                            <p>01-06<span>青岛是一座历史文化名城，在青岛拍婚纱照哪家好？</span></p>
-                            <hr class="hr-gray">
-                        </a>
-                    </li>
-                </ul>
-                <!-- 新闻右边 ul 的内容-->
-            </div>
-            <div class="n-c-right fr">
-                <ul>
-                    <li class="content-right">
-                        <a href="#">
-                            <p>02-03<span>青岛是一座历史文化名城，在青岛拍婚纱照哪家好？</span></p>
-                            <hr class="hr-gray">
-                        </a>
-                    </li>
-                    <li class="content-right">
-                        <a href="#">
-                            <p>01-20<span>青岛是一座历史文化名城，在青岛拍婚纱照哪家好？</span></p>
-                            <hr class="hr-gray">
-                        </a>
-                    </li>
-                    <li class="content-right">
-                        <a href="#">
-                            <p>01-06<span>青岛是一座历史文化名城，在青岛拍婚纱照哪家好？</span></p>
-                            <hr class="hr-gray">
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- 新闻中心  E -->
-
-<!--receipt写真旅拍 B-->
-<div class="photo">
-    <a href="http://www.bojuexz.com/" target="_blank" class="photo_top">
-        <div class="photo_top_l move"></div>
-        <!--<div class="photo_top_r move"></div>-->
-    </a>
-    <a href="http://www.bojuexz.com/" target="_blank" class="photo_bot">
-        <div class="photo_bot_l move"></div>
-        <!--<div class="photo_bot_r move"></div>-->
-    </a>
-</div>
-<!--receipt写真旅拍 E-->
-
-<!--尾部  B-->
-<div class="footer">
-    <div class="content">
-        <div class="foot_t">
-            <img src="images/footer_title.png" alt=""/>
-        </div>
-        <div class="jtlink">
-            <div class="link-menu">
-                海内外直营店30家:
-                <a title="厦门铂爵婚纱摄影" target="_blank">厦门</a>
-                <span>|</span>
-                <a title="三亚铂爵婚纱摄影">三亚</a>
-                <span>|</span>
-                <a title="青岛铂爵婚纱摄影">青岛</a>
-                <span>|</span>
-                <a title="大连铂爵婚纱摄影">大连</a>
-                <span>|</span>
-                <a title="大理铂爵婚纱摄影">大理</a>
-                <span>|</span>
-                <a title="深圳铂爵婚纱摄影">深圳</a>
-                <span>|</span>
-                <a title="福州铂爵婚纱摄影">福州</a>
-                <span>|</span>
-                <a title="丽江铂爵婚纱摄影">丽江</a>
-                <span>|</span>
-                <a title="桂林铂爵婚纱摄影">桂林</a>
-                <span>|</span>
-                <a title="普吉岛铂爵婚纱摄影">普吉岛</a>
-                <span>|</span>
-                <a title="巴厘岛铂爵婚纱摄影">巴厘岛</a>
-                <span>|</span>
-                <a title="马尔代夫铂爵婚纱摄影">马尔代夫</a>
-                <br>
-                <span>|</span><a title="#"> 香格里拉 </a>
-                <span>|</span><a title="#"> 希腊 </a>
-                <span>|</span><a title="#"> 法国 </a>
-                <span>|</span><a title="#"> 意大利 </a>
-                <span>|</span><a title="#"> 美国 </a>
-                <span>|</span><a title="#"> 毛里求斯 </a>
-                <span>|</span><a title="#"> 日本 </a>
-                <span>|</span><a title="#"> 韩国 </a>
-                <span>|</span><a title="#"> 德国 </a>
-                <span>|</span><a title="#"> 新西兰 </a>
-                <span>|</span><a title="#"> 澳大利亚等</a>
-            </div>
-        </div>
-        <p style="width:620px;">全国免费咨询热线：
-            <font color="#ffffff">400-6677-500 </font> (在线时间：09:00-22:00)</p>
-        <p style="width:520px;">
-            <font>总经理投诉热线：150-6075-0068</font> (在线时间：09:00-21:00)</p>
-        <p>
-            <small style="font-size:74%">
-                <a href="#" title="铂爵品牌故事" target="_blank">首页</a>
-                - <a href="#" title="铂爵品牌故事" target="_blank">公司简介</a>
-                - <a href="#" title="人才招聘" target="_blank">人才招聘</a>
-                - <a href="#" title="银行账号" target="_blank">银行账号</a>
-                - <a href="#" title="铂爵旅游婚纱照欣赏"
-                     target="_blank">客照欣赏</a>
-                - <a href="#" title="铂爵微电影欣赏"
-                     target="_blank">客户微电影</a>
-            </small>
-        </p>
-        <div class="follow">
-            <span><a href="http://new.cnzz.com/v1/login.php?siteid=1260358555">
-                <img src="images/pic1.gif" alt=""/>
-            </a></span>
-            <button type="button" style="padding: 0px; border: 0px;background: none;" data-toggle="modal"
-                    data-target="#exampleModal" data-whatever="@mdo"><img
-                    src="images/footer_wx.png" target="_blank"></button>
-            <a href="http://weibo.com/bj592" target="_blank"><img src="images/footer_wb.png"
-                                                                  target="_blank"></a>
-            <a href="http://www10.53kf.com/webCompany.php?style=1&amp;arg=9005398" target="_blank"><img
-                    src="images/footer_qq.png" target="_blank"></a>
-        </div>
-    </div>
-</div>
-<!--尾部  E-->
-
-<!--左边固定栏fixed-->
-<div class="fixed">
-    <div class="fixed_l move">
-        <a href="http://www10.53kf.com/webCompany.php?arg=9005398&style=1" target="_blank" class="vg1"></a>
-        <a href="http://weibo.com/bj592" target="_blank" class="vg2"></a>
-        <a href="http://www10.53kf.com/webCompany.php?arg=9005398&style=1" target="_blank" class="vg3"></a>
-        <a href="https://shangpinbojue.tmall.com/" target="_blank" class="vg4"></a>
-        <a href="#row" class="vg5"></a>
-    </div>
-</div>
 </body>
+
 </html>
+<script type="text/html" id="template-header">
+    <div class="city">{{result.today.city}}</div>
+    <div class="today_temperature">{{result.sk.temp}}℃</div>
+    <div class="clearfix">
+        <div class="wind pull-left">{{result.sk.wind_strength}}{{result.sk.wind_direction}}</div>
+        <div class="humidity pull-right">湿度：{{result.sk.humidity}}</div>
+    </div>
+    <div class="life clearfix">
+        <div class="uv_index">紫外线强度：{{result.today.uv_index}}</div>
+        <div class="wash_index">洗车指数：{{result.today.wash_index}}</div>
+        <div class="travel_index">旅游指数：{{result.today.travel_index}}</div>
+        <div class="exercise_index">晨练指数：{{result.today.exercise_index}}</div>
+    </div>
+    <div class="dressing_index">穿衣指数：{{result.today.dressing_index}}</div>
+    <div class="advice">{{result.today.dressing_advice}}</div>
+</script>
+
+<script type="text/html" id="template-tab">
+    <li role="presentation" class="active">
+        <a href="#today" aria-controls="home" role="tab" data-toggle="tab">
+            <div>今天</div>
+            <div>{{result.future[0].week}}</div>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#day2" aria-controls="messages" role="tab" data-toggle="tab">
+            <div>{{result.future[1].date}}</div>
+            <div>{{result.future[1].week}}</div>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#day3" aria-controls="settings" role="tab" data-toggle="tab">
+            <div>{{result.future[2].date}}</div>
+            <div>{{result.future[2].week}}</div>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#day4" aria-controls="settings" role="tab" data-toggle="tab">
+            <div>{{result.future[3].date}}</div>
+            <div>{{result.future[3].week}}</div>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#day5" aria-controls="settings" role="tab" data-toggle="tab">
+            <div>{{result.future[4].date}}</div>
+            <div>{{result.future[4].week}}</div>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#day6" aria-controls="settings" role="tab" data-toggle="tab">
+            <div>{{result.future[5].date}}</div>
+            <div>{{result.future[5].week}}</div>
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#day7" aria-controls="settings" role="tab" data-toggle="tab">
+            <div>{{result.future[6].date}}</div>
+            <div>{{result.future[6].week}}</div>
+        </a>
+    </li>
+</script>
+<script type="text/html" id="template-item">
+    <div role="tabpanel" class="tab-pane active" id="today">
+        <div class="temperature">{{result.future[0].temperature}}</div>
+        <div class="weather">{{result.future[0].weather}}</div>
+        <div class="wind">{{result.future[0].wind}}</div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="day2">
+        <div class="temperature">{{result.future[1].temperature}}</div>
+        <div class="weather">{{result.future[1].weather}}</div>
+        <div class="wind">{{result.future[1].wind}}</div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="day3">
+        <div class="temperature">{{result.future[2].temperature}}</div>
+        <div class="weather">{{result.future[2].weather}}</div>
+        <div class="wind">{{result.future[2].wind}}</div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="day4">
+        <div class="temperature">{{result.future[3].temperature}}</div>
+        <div class="weather">{{result.future[3].weather}}</div>
+        <div class="wind">{{result.future[3].wind}}</div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="day5">
+        <div class="temperature">{{result.future[4].temperature}}</div>
+        <div class="weather">{{result.future[4].weather}}</div>
+        <div class="wind">{{result.future[4].wind}}</div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="day6">
+        <div class="temperature">{{result.future[5].temperature}}</div>
+        <div class="weather">{{result.future[5].weather}}</div>
+        <div class="wind">{{result.future[5].wind}}</div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="day7">
+        <div class="temperature">{{result.future[6].temperature}}</div>
+        <div class="weather">{{result.future[6].weather}}</div>
+        <div class="wind">{{result.future[6].wind}}</div>
+    </div>
+</script>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/template.js"></script>
+<script src="js/dateTo.js"></script>
+<script src="js/index.js"></script>

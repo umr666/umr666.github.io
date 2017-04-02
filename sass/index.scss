@@ -1,0 +1,74 @@
+@import'base.scss';
+@import'normalize.scss';
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+// 头部
+.header {
+    padding-top: 50px;
+    .city {
+        font-size: 30px;
+        text-align: center;
+    }
+    .today_temperature {
+        margin-top: 10px;
+        font-size: 30px;
+        text-align: center;
+    }
+    .wind,
+    .humidity {
+        font-size: 20px;
+        width: 50%;
+    }
+    .humidity {
+        text-align: right;
+    }
+    .life{
+        margin:20px 0;
+        font-size: 16px;
+        div{
+            width: 50%;
+            float: left;
+            text-align: center;
+        }
+    }
+    .dressing_index{
+        font-size: 16px;
+    }
+    .advice {
+
+    }
+}
+
+// 内容
+#main {
+    padding: 0;
+    margin-top: 10px;
+    &>div {
+        overflow: hidden;
+    }
+    .tabs-ul {
+        width: 175%;
+        border-bottom: none;
+        li {
+            width: 14.2856%;
+            text-align: center;
+            border-bottom: none;
+            a{
+                padding: 0;
+            }
+        }
+    }
+    .tabs-bottom{
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+    }
+}
